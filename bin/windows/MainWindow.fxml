@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="501.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guiClient.FastFuelWindow">
+   <children>
+      <AnchorPane fx:id="emuPane" layoutX="89.0" layoutY="56.0" prefHeight="412.0" prefWidth="325.0" styleClass="grid-pane" stylesheets="@../pics/gridPaneStyle.css">
+         <children>
+            <AnchorPane fx:id="step1f" layoutX="17.0" layoutY="65.0">
+               <children>
+                  <VBox alignment="CENTER" minWidth="300.0" spacing="10.0">
+                     <children>
+                        <Button fx:id="btnEmulate" mnemonicParsing="false" onAction="#btnEmulatePressed" prefHeight="30.0" prefWidth="200.0" styleClass="task-button" stylesheets="@../pics/style.css" text="Car Ins." textFill="WHITE">
+                           <font>
+                              <Font name="Calibri" size="20.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btnEmulate2" mnemonicParsing="false" onAction="#btnEmulatePressed" prefHeight="30.0" prefWidth="200.0" styleClass="task-button" stylesheets="@../pics/style.css" text="Life Ins." textFill="WHITE">
+                           <font>
+                              <Font name="Calibri" size="20.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btnEmulate3" mnemonicParsing="false" onAction="#btnEmulatePressed" prefHeight="30.0" prefWidth="200.0" styleClass="task-button" stylesheets="@../pics/style.css" text="Apartment Ins." textFill="WHITE">
+                           <font>
+                              <Font name="Calibri" size="20.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btnEmulate4" mnemonicParsing="false" onAction="#btnEmulatePressed" prefHeight="30.0" prefWidth="200.0" styleClass="task-button" stylesheets="@../pics/style.css" text="Health Ins." textFill="WHITE">
+                           <font>
+                              <Font name="Calibri" size="20.0" />
+                           </font>
+                        </Button>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" top="10.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </AnchorPane>
+            <Label layoutX="20.0" layoutY="24.0" text="Sell" textFill="#144465" underline="true">
+               <font>
+                  <Font name="Arial" size="16.0" />
+               </font>
+            </Label>
+            <AnchorPane fx:id="step2f" layoutX="15.9765625" layoutY="243.0">
+               <children>
+                  <Label text="View" textFill="#144465" underline="true">
+                     <font>
+                        <Font name="Arial" size="16.0" />
+                     </font>
+                  </Label>
+                  <VBox alignment="CENTER" minWidth="300.0" spacing="10.0">
+                     <children>
+                        <Button fx:id="btnEmulate41" mnemonicParsing="false" onAction="#btnEmulatePressed" prefHeight="30.0" prefWidth="200.0" styleClass="task-button" stylesheets="@../pics/style.css" text="View all purchases" textFill="WHITE">
+                           <font>
+                              <Font name="Calibri" size="20.0" />
+                           </font>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <VBox.margin>
+                              <Insets top="50.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" top="10.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <VBox prefHeight="56.0" prefWidth="500.0">
+         <children>
+            <AnchorPane fx:id="titleBar" onMouseDragged="#dragTopBar" onMousePressed="#clickOnTopBar" styleClass="linear-grad-to-top" stylesheets="@../pics/style.css">
+               <children>
+                  <Label layoutX="10.0" layoutY="7.0" text="Insurance Company" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
