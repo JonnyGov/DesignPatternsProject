@@ -78,7 +78,7 @@
       </AnchorPane>
       <VBox prefHeight="56.0" prefWidth="500.0">
          <children>
-            <AnchorPane fx:id="titleBar" onMouseDragged="#dragTopBar" onMousePressed="#clickOnTopBar" styleClass="linear-grad-to-top" stylesheets="@../pics/style.css">
+            <AnchorPane fx:id="titleBar" minWidth="600.0" onMouseDragged="#dragTopBar" onMousePressed="#clickOnTopBar" styleClass="linear-grad-to-top" stylesheets="@../pics/style.css">
                <children>
                   <Label layoutX="10.0" layoutY="7.0" text="Insurance Company" textAlignment="CENTER" textFill="WHITE">
                      <font>
@@ -87,6 +87,14 @@
                   </Label>
                </children>
             </AnchorPane>
+         </children>
+      </VBox>
+      <VBox alignment="BASELINE_RIGHT" layoutX="493.0" layoutY="411.0">
+         <children>
+            <Label styleClass="main-pane" stylesheets="@../pics/style.css" text="&quot;version&quot;: &quot;1.2&quot;" />
+            <Label styleClass="main-pane" stylesheets="@../pics/style.css" text="&quot;student_name_1&quot;:" />
+            <Label styleClass="main-pane" stylesheets="@../pics/style.css" text="&quot;student_name_1&quot;:" />
+            <Label styleClass="main-pane" stylesheets="@../pics/style.css" text="&quot;student_name_1&quot;:" />
          </children>
       </VBox>
    </children>

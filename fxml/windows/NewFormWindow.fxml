@@ -44,7 +44,7 @@
                               <Font name="Arial Bold" size="18.0" />
                            </font>
                         </Label>
-                        <GridPane hgap="5.0" layoutX="-5.0" layoutY="17.0" prefHeight="545.0" prefWidth="820.0" styleClass="grid-pane" stylesheets="@../pics/gridPaneStyle.css" vgap="5.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="15.0">
+                        <GridPane hgap="5.0" layoutX="-5.0" layoutY="17.0" prefHeight="545.0" prefWidth="600.0" styleClass="grid-pane" stylesheets="@../pics/gridPaneStyle.css" vgap="5.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="15.0">
                           <columnConstraints>
                             <ColumnConstraints />
                               <ColumnConstraints />
@@ -154,6 +154,17 @@
                         </GridPane>
                      </children>
                   </AnchorPane>
+                  <VBox alignment="BOTTOM_RIGHT" layoutX="613.0" layoutY="522.0">
+                     <children>
+                        <Label styleClass="main-pane" stylesheets="@../pics/style.css" text="&quot;version&quot;: &quot;1.2&quot;" />
+                        <Label styleClass="main-pane" stylesheets="@../pics/style.css" text="&quot;student_name_1&quot;:" />
+                        <Label styleClass="main-pane" stylesheets="@../pics/style.css" text="&quot;student_name_1&quot;:" />
+                        <Label styleClass="main-pane" stylesheets="@../pics/style.css" text="&quot;student_name_1&quot;:" />
+                     </children>
+                     <padding>
+                        <Insets right="5.0" />
+                     </padding>
+                  </VBox>
                </children>
             </AnchorPane>
          </center>
