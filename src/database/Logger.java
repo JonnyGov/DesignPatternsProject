@@ -4,16 +4,12 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.lang.reflect.Type;
-import java.nio.file.AccessDeniedException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
 
 import entity.CreateInsuraceFacade;
-import entity.InsuranceMock;
 import entity.InsuranceData;
 import entity.InsuranceData.InsuranceType;
 
@@ -33,7 +29,6 @@ public class Logger implements InsuranceDao, metaDataDao {
 	private ArrayList<InsuranceData> insurances;
 	private final static String metaDataPath = "metaTest.json";
 	private final static String insurancesDataPath = "insuranceTest.json";
-	private final static String logLoggerPath = "log.txt";
 	private Gson gson;
 	private metaData meta;
 	private Type InsuranceDataListType;

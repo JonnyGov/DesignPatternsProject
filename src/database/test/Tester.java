@@ -20,8 +20,8 @@ private static void printInsurance(ArrayList <InsuranceData> insurances) {
 public static void main(String[] args) {
 	InsuranceDao insuranceData = Logger.getLogger();
 	metaDataDao metaData = Logger.getLogger();
-	insuranceData.addInsurace();
-	insuranceData.addInsurace();
+	//insuranceData.addInsurace();
+	//insuranceData.addInsurace();
 	printInsurance(insuranceData.getAllInsurance());
 	System.out.println(metaData.getInput());
 	
