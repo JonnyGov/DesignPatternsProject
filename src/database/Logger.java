@@ -57,7 +57,7 @@ public class Logger implements InsuranceDao, metaDataDao {
 		String jsonStr;
 		CreateInsuraceFacade creator = new CreateInsuraceFacade();
 		
-		// @@@this is mock need to change in future!
+
 		InsuranceData insurance = creator.createInsurance(name,namilyName,date,remarks,type); // create new insurance data.
 		getAllInsurance();
 		insurances.add(insurance);
