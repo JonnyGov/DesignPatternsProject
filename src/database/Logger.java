@@ -8,6 +8,7 @@ import java.nio.file.AccessDeniedException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -52,12 +53,12 @@ public class Logger implements InsuranceDao, metaDataDao {
 	}
 
 	@Override
-	public void addInsurace() {
+	public void addInsurace(String name, String namilyName , Date date,String remarks ,InsuranceType type) {
 		String jsonStr;
 		CreateInsuraceFacade creator = new CreateInsuraceFacade();
 		
 		// @@@this is mock need to change in future!
-		InsuranceData insurance = creator.createInsurance(null,null,null,null,InsuranceType.Mock); // create new insurance data.
+		InsuranceData insurance = creator.createInsurance(name,namilyName,date,remarks,type); // create new insurance data.
 		getAllInsurance();
 		insurances.add(insurance);
 		jsonStr = gson.toJson(insurances, InsuranceDataListType);
