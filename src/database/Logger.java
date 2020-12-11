@@ -35,6 +35,7 @@ public class Logger implements InsuranceDao, metaDataDao {
 	private Type InsuranceDataListType;
 
 	private Logger() {
+		if (singelton!=null) return;
 		gson = new GsonBuilder().registerTypeAdapter(InsuranceData.class, new InterfaceAdapter<InsuranceData>())
 				.create();
 		InsuranceDataListType = new TypeToken<ArrayList<InsuranceData>>() {
