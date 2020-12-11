@@ -40,7 +40,7 @@ public class Logger implements InsuranceDao, metaDataDao {
 		InsuranceDataListType = new TypeToken<ArrayList<InsuranceData>>() {
 		}.getType();
 		getAllInsurance(); // update insurance data
-		getInput(); // update metaInput
+		getMetaDataInput(); // update metaInput
 
 	}
 
@@ -82,7 +82,7 @@ public class Logger implements InsuranceDao, metaDataDao {
 	}
 
 	@Override
-	public metaData getInput() {
+	public metaData getMetaDataInput() {
 		String res;
 		res = readAllBytesJava7(metaDataPath);
 		if (res == null) { // file not exist

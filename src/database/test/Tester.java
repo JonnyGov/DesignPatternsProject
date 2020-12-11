@@ -39,7 +39,7 @@ public static void main(String[] args) {
 	insuranceData.addInsurace("vlad","mashu aroh",d,"i am man!",InsuranceType.Car);
 	printInsurance(insuranceData.getAllInsurance());
 	System.out.println("printing meta data.....");
-	System.out.println(metaData.getInput());
+	System.out.println(metaData.getMetaDataInput());
 	
 }
 }

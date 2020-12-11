@@ -1,5 +1,5 @@
 package database;
 
 public interface metaDataDao {
-public metaData getInput();
+public metaData getMetaDataInput();
 }
