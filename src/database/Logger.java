@@ -9,10 +9,6 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Date;
 
-import entity.CreateInsuraceFacade;
-import entity.InsuranceData;
-import entity.InsuranceData.InsuranceType;
-
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonDeserializationContext;
@@ -24,11 +20,16 @@ import com.google.gson.JsonSerializationContext;
 import com.google.gson.JsonSerializer;
 import com.google.gson.reflect.TypeToken;
 
+import entity.CreateInsuraceFacade;
+import entity.InsuranceData;
+import entity.InsuranceData.InsuranceType;
+
 public class Logger implements InsuranceDao, metaDataDao {
 	private final static Logger singelton = new Logger();
 	private ArrayList<InsuranceData> insurances;
-	private final static String metaDataPath = "metaTest.json";
-	private final static String insurancesDataPath = "insuranceTest.json";
+	private final static String dataBaseFolder= "database/";
+	private final static String metaDataPath = dataBaseFolder+"metaTest.json";
+	private final static String insurancesDataPath = dataBaseFolder+"insuranceTest.json";
 	private Gson gson;
 	private metaData meta;
 	private Type InsuranceDataListType;
