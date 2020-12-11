@@ -6,32 +6,27 @@ public class InsuranceMock implements InsuranceData {
 
     @Override
     public String getName() {
-        // TODO Auto-generated method stub
-        return "poop";
+        return "name";
     }
 
     @Override
     public String getFamilyName() {
-        // TODO Auto-generated method stub
-        return "hoop";
+        return "family name";
     }
 
     @Override
-    public Date getData() {
-        // TODO Auto-generated method stub
+    public Date getDate() {
         return new Date(System.currentTimeMillis());
     }
 
     @Override
     public String getRemarks() {
-        // TODO Auto-generated method stub
         return "Good";
     }
 
     @Override
     public String getType() {
-        // TODO Auto-generated method stub
-        return "goochi";
+        return InsuranceType.Mock.toString();
     }
     
 }
