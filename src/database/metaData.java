@@ -27,4 +27,9 @@ public class metaData {
     public String getVersion() {
         return version;
     }
+    @Override
+    public String toString() {
+    	return "Version " + version+ "\nDesigned & Developed by:\n" +name1+" "+ name2+" "+name3;
+
+    }
 }
