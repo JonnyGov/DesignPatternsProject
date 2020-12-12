@@ -62,6 +62,15 @@ final class Logger implements InsuranceDao, metaDataDao {
 		wrtieToFile(insurancesDataPath, jsonStr);
 
 	}
+	@Override
+	public void addInsurace(InsuranceData insurance) {
+		String jsonStr;
+		getAllInsurance();
+		insurances.add(insurance);
+		jsonStr = gson.toJson(insurances, InsuranceDataListType);
+		wrtieToFile(insurancesDataPath, jsonStr);
+		
+	}
 
 	@Override
 	public ArrayList<InsuranceData> getAllInsurance() {
@@ -173,4 +182,6 @@ final class Logger implements InsuranceDao, metaDataDao {
 			return elem;
 		}
 	}
+
+	
 }

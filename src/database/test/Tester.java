@@ -6,9 +6,9 @@ import java.util.Date;
 
 import database.InsuranceDao;
 import database.metaDataDao;
+import entity.CreateInsuraceFacade;
 import entity.InsuranceData;
 import entity.InsuranceData.InsuranceType;
-
 public class Tester {
 private static void printInsurance(ArrayList <InsuranceData> insurances) {
 	System.out.println("printing insurances.....");
@@ -37,6 +37,9 @@ public static void main(String[] args) {
 	insuranceData.addInsurace("yonathan","gov",d,"poop poop",InsuranceType.Apartment);
 	d =new Date();
 	insuranceData.addInsurace("vlad","mashu aroh",d,"i am man!",InsuranceType.Car);
+	CreateInsuraceFacade creator = new CreateInsuraceFacade();
+	InsuranceData insurance = creator.createInsurance("ofek","Shachar",d,"add insurance by give insurance object",InsuranceType.Life); // create new insurance data.
+	insuranceData.addInsurace(insurance);
 	printInsurance(insuranceData.getAllInsurance());
 	System.out.println("printing meta data.....");
 	System.out.println(metaData.getMetaDataInput());
