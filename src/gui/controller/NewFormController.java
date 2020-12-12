@@ -1,14 +1,14 @@
 package gui.controller;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 
-public class NewFormWindowController {
+public class NewFormController {
 
     @FXML
     private BorderPane mainBorderPane;
@@ -47,8 +47,29 @@ public class NewFormWindowController {
     private Button btnAECUSave1;
 
     @FXML
+    private VBox vbxAuther;
+
+    @FXML
+    private Label lblVersion;
+    
+    @FXML
+    private Label lblTitle;
+
+    @FXML
     void btnAECUSavePressed(ActionEvent event) {
 
+    }
+ 
+    public Label getLblVersion() {
+    	return lblVersion;
+    }
+    
+    public Label getLblTitle() {
+    	return lblTitle;
+    }
+    
+    public VBox getVBxAuthor() {
+    	return vbxAuther;
     }
 
 }

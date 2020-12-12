@@ -7,7 +7,6 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
@@ -15,57 +14,51 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.NewFormWindowController">
+<VBox xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.NewFormController">
    <children>
-      <BorderPane fx:id="mainBorderPane" styleClass="main-pane" stylesheets="@../pics/style.css">
-         <top>
-            <VBox fx:id="vbox1" BorderPane.alignment="CENTER">
+      <VBox fx:id="vbox1">
+         <children>
+            <AnchorPane fx:id="titleBar" styleClass="linear-grad-to-top" stylesheets="@../pics/style.css">
                <children>
-                  <AnchorPane fx:id="titleBar" styleClass="linear-grad-to-top" stylesheets="@../pics/style.css">
-                     <children>
-                        <Label layoutX="27.0" layoutY="7.0" text="Insurance Company" textAlignment="CENTER" textFill="WHITE">
-                           <font>
-                              <Font name="Calibri Bold" size="14.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </AnchorPane>
-                  <HBox alignment="CENTER_LEFT" prefHeight="30.0" style="-fx-background-color: #d8dce0;" />
+                  <Label layoutX="27.0" layoutY="7.0" text="Insurance Company" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri Bold" size="14.0" />
+                     </font>
+                  </Label>
                </children>
-            </VBox>
-         </top>
-         <center>
-            <AnchorPane fx:id="mainwindow_pane" BorderPane.alignment="CENTER">
+            </AnchorPane>
+            <HBox alignment="CENTER_LEFT" prefHeight="30.0" style="-fx-background-color: #d8dce0;" />
+            <HBox alignment="CENTER_LEFT">
                <children>
-                  <AnchorPane fx:id="addEditCustomerPane" layoutX="3.0" layoutY="12.0">
+                  <AnchorPane fx:id="addEditCustomerPane">
                      <children>
-                        <Label layoutX="4.0" layoutY="-4.0" prefHeight="21.0" prefWidth="215.0" text="New Car Insurance">
+                        <Label fx:id="lblTitle" layoutX="4.0" layoutY="-4.0" prefHeight="21.0" prefWidth="215.0" text="New Car Insurance">
                            <font>
                               <Font name="Arial Bold" size="18.0" />
                            </font>
                         </Label>
-                        <GridPane hgap="5.0" layoutX="-5.0" layoutY="17.0" prefHeight="545.0" prefWidth="600.0" styleClass="grid-pane" stylesheets="@../pics/gridPaneStyle.css" vgap="5.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="15.0">
-                          <columnConstraints>
-                            <ColumnConstraints />
+                        <GridPane hgap="5.0" layoutX="-5.0" layoutY="17.0" styleClass="grid-pane" stylesheets="@../pics/gridPaneStyle.css" vgap="5.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="15.0">
+                           <columnConstraints>
+                              <ColumnConstraints />
                               <ColumnConstraints />
                               <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="577.0" minWidth="10.0" prefWidth="427.0" />
                               <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="577.0" minWidth="10.0" prefWidth="427.0" />
-                          </columnConstraints>
-                          <rowConstraints>
+                           </columnConstraints>
+                           <rowConstraints>
                               <RowConstraints maxHeight="68.0" minHeight="10.0" percentHeight="0.0" prefHeight="28.0" vgrow="SOMETIMES" />
                               <RowConstraints maxHeight="28.0" minHeight="10.0" percentHeight="0.0" prefHeight="28.0" vgrow="SOMETIMES" />
                               <RowConstraints percentHeight="0.0" vgrow="SOMETIMES" />
                               <RowConstraints maxHeight="1.7976931348623157E308" percentHeight="0.0" vgrow="SOMETIMES" />
-                            <RowConstraints percentHeight="0.0" vgrow="SOMETIMES" />
-                            <RowConstraints percentHeight="0.0" vgrow="SOMETIMES" />
-                            <RowConstraints percentHeight="0.0" vgrow="SOMETIMES" />
+                              <RowConstraints percentHeight="0.0" vgrow="SOMETIMES" />
+                              <RowConstraints percentHeight="0.0" vgrow="SOMETIMES" />
+                              <RowConstraints percentHeight="0.0" vgrow="SOMETIMES" />
                               <RowConstraints percentHeight="0.0" vgrow="SOMETIMES" />
                               <RowConstraints percentHeight="0.0" vgrow="SOMETIMES" />
                               <RowConstraints percentHeight="0.0" vgrow="SOMETIMES" />
                               <RowConstraints maxHeight="1.7976931348623157E308" percentHeight="0.0" vgrow="SOMETIMES" />
                               <RowConstraints percentHeight="0.0" vgrow="SOMETIMES" />
                               <RowConstraints percentHeight="0.0" valignment="CENTER" vgrow="SOMETIMES" />
-                          </rowConstraints>
+                           </rowConstraints>
                            <children>
                               <Label text="Name:" GridPane.columnIndex="2" GridPane.rowIndex="2">
                                  <font>
@@ -154,20 +147,21 @@
                         </GridPane>
                      </children>
                   </AnchorPane>
-                  <VBox alignment="BOTTOM_RIGHT" layoutX="613.0" layoutY="522.0">
+                  <VBox fx:id="vbxAuther" alignment="BOTTOM_LEFT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" stylesheets="@../pics/style.css">
                      <children>
-                        <Label styleClass="main-pane" stylesheets="@../pics/style.css" text="&quot;version&quot;: &quot;1.2&quot;" />
-                        <Label styleClass="main-pane" stylesheets="@../pics/style.css" text="&quot;student_name_1&quot;:" />
-                        <Label styleClass="main-pane" stylesheets="@../pics/style.css" text="&quot;student_name_1&quot;:" />
-                        <Label styleClass="main-pane" stylesheets="@../pics/style.css" text="&quot;student_name_1&quot;:" />
+                        <Label fx:id="lblVersion" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="main-pane" text="&quot;version&quot;: &quot;1.2&quot;" />
                      </children>
-                     <padding>
-                        <Insets right="5.0" />
-                     </padding>
+                     <opaqueInsets>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </opaqueInsets>
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
                   </VBox>
                </children>
-            </AnchorPane>
-         </center>
-      </BorderPane>
+            </HBox>
+         </children>
+      </VBox>
+      <AnchorPane />
    </children>
-</AnchorPane>
+</VBox>

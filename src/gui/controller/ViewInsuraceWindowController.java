@@ -36,16 +36,16 @@ public class ViewInsuraceWindowController {
 	private TableView<InsuranceData> insuranceTable;
 
 	@FXML
-	private TableColumn<InsuranceData, String> firstNameColumn;
+	private TableColumn<InsuranceData, String> FirstNameColumn;
 
 	@FXML
-	private TableColumn<InsuranceData, String> familyNameColumn;
+	private TableColumn<InsuranceData, String> FamilyNameColumn;
 
 	@FXML
-	private TableColumn<InsuranceData, Date> dataColumn;
+	private TableColumn<InsuranceData, Date> DataColumn;
 
 	@FXML
-	private TableColumn<InsuranceData, InsuranceData> remarksColumn;
+	private TableColumn<InsuranceData, InsuranceData> RemarksColumn;
 
 	@FXML
 	private VBox VbxAuther;

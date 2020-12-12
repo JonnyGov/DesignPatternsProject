@@ -1,10 +1,8 @@
 package gui;
 
+import database.test.Tester;
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 /**
  * client's exe starts here
@@ -22,6 +20,7 @@ public class App extends Application {
 	private static Stage pStage;
 	@Override
 	public void start(Stage primaryStage) {
+		Tester.main(null);
 		try {
 			pStage= primaryStage;
 			pStage.setResizable(false);

@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 
+import database.InsuranceDao;
 import database.metaData;
 import database.metaDataDao;
 import entity.InsuranceData;
@@ -22,8 +23,8 @@ public class ViewInsuranceBuilder implements SceneBuilder {
 	private FXMLLoader loader;
 	private Scene scene;
 	private ViewInsuraceWindowController controller;
-	
-	
+
+
 	public ViewInsuranceBuilder() {
 		fxmlPath= "/windows/ViewInsurance.fxml";
 	}
@@ -42,7 +43,7 @@ public class ViewInsuranceBuilder implements SceneBuilder {
 			e.printStackTrace();
 		}
 	}
-	
+
 	@Override
 	public void buildController() {
 		if(loader.getController() instanceof ViewInsuraceWindowController) {
@@ -69,15 +70,15 @@ public class ViewInsuranceBuilder implements SceneBuilder {
 		authers.add(md.name1);
 		authers.add(md.name2);
 		authers.add(md.name3);
-		
+
 		VBox VbxAuther = controller.getVBxAuthor();
 		for (String auther : authers) {
-    		String text = String.format("auther %d: %s",authers.indexOf(auther)+1,auther);
-    		Label curAutherLable = new Label(text);
-    		curAutherLable.setMaxWidth(Double.MAX_VALUE);
-    		curAutherLable.getStyleClass().add("main-pane");
-    		VbxAuther.getChildren().add(curAutherLable);
-    	}
+			String text = String.format("auther %d: %s",authers.indexOf(auther)+1,auther);
+			Label curAutherLable = new Label(text);
+			curAutherLable.setMaxWidth(Double.MAX_VALUE);
+			curAutherLable.getStyleClass().add("main-pane");
+			VbxAuther.getChildren().add(curAutherLable);
+		}
 	}
 	@Override
 	public void buildInsurenceTitle() {
@@ -88,23 +89,24 @@ public class ViewInsuranceBuilder implements SceneBuilder {
 	public void buildViewPurchases() {
 		TableView<InsuranceData> insuranceTable = controller.getInsuranceTable();
 		for(TableColumn column :  insuranceTable.getColumns()) {
-			System.out.println(column.getId().split("Column")[0]);
 			column.setCellValueFactory(new PropertyValueFactory(column.getId().split("Column")[0]));
 		}
-		
-		/*
-		 * InsuranceDao iDao = InsuranceDao.getInsuranceDataBase(); for(InsuranceData
-		 * insurance :iDao.getAllInsurance()) { System.out.println(insurance);
-		 * insuranceTable.getItems().add(insurance); }
-		 */
+
+
+		InsuranceDao iDao = InsuranceDao.getInsuranceDataBase(); 
+		for(InsuranceData insurance : iDao.getAllInsurance()) {
+			System.out.println(insurance.getFamilyName());
+			insuranceTable.getItems().add(insurance);
+		}
+
 		LifeInsurance test = new LifeInsurance("t", "eee", "s", new Date(System.currentTimeMillis()));
 		insuranceTable.getItems().add(test);
 	}
-	
-	
+
+
 	public Scene getResult() {
 		return scene;
 	}
 
-	
+
 }
