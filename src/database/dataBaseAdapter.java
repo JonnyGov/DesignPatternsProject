@@ -1,11 +1,11 @@
 package database;
 
 public class dataBaseAdapter {
-	private static InsuranceDao insuranceDB;
-	private  static metaDataDao metaDataDB;
-	private  static Admin adminDB;
+	// default is logger.
+	private static InsuranceDao insuranceDB=Logger.getLogger();
+	private  static metaDataDao metaDataDB=Logger.getLogger();
+	private  static Admin adminDB=Logger.getLogger();
 	private dataBaseAdapter() {
-		
 	}
 public static void setLoggerDB() {
 	setInsuranceDB(Logger.getLogger());
