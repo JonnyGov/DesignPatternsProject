@@ -3,8 +3,8 @@ package database.test;
 import java.util.ArrayList;
 import java.util.Date;
 
+
 import database.InsuranceDao;
-import database.Logger;
 import database.metaDataDao;
 import entity.InsuranceData;
 import entity.InsuranceData.InsuranceType;
@@ -24,8 +24,8 @@ private static void printInsurance(ArrayList <InsuranceData> insurances) {
 	}
 }
 public static void main(String[] args) {
-	InsuranceDao insuranceData = Logger.getLogger();
-	metaDataDao metaData = Logger.getLogger();
+	InsuranceDao insuranceData = InsuranceDao.getInsuranceDataBase();
+	metaDataDao metaData = metaDataDao.getMetaDataBase();
 	Date d =new Date();
 	insuranceData.addInsurace("ofek","Shachar",d,"give me money",InsuranceType.Apartment);
 	insuranceData.addInsurace("yonathan","gov",d,"poop",InsuranceType.Car);

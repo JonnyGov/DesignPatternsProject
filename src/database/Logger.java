@@ -24,7 +24,7 @@ import entity.CreateInsuraceFacade;
 import entity.InsuranceData;
 import entity.InsuranceData.InsuranceType;
 
-public class Logger implements InsuranceDao, metaDataDao {
+final class Logger implements InsuranceDao, metaDataDao {
 	private final static Logger singelton = new Logger();
 	private ArrayList<InsuranceData> insurances;
 	private final static String dataBaseFolder= "database/";
