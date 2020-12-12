@@ -58,7 +58,7 @@ public static void main(String[] args) {
 	printInsurance(insuranceData.getAllInsurance());
 	System.out.println("printing meta data.....");
 	System.out.println(metaData.getMetaDataInput());
-	adminTest();
+	//adminTest();
 	
 }
 }
