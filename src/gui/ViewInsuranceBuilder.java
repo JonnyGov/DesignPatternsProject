@@ -2,13 +2,19 @@ package gui;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Date;
 
 import database.metaData;
 import database.metaDataDao;
+import entity.InsuranceData;
+import entity.LifeInsurance;
 import gui.controller.ViewInsuraceWindowController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.VBox;
 
 public class ViewInsuranceBuilder implements SceneBuilder {
@@ -80,8 +86,21 @@ public class ViewInsuranceBuilder implements SceneBuilder {
 
 	@Override
 	public void buildViewPurchases() {
-		return;
+		TableView<InsuranceData> insuranceTable = controller.getInsuranceTable();
+		for(TableColumn column :  insuranceTable.getColumns()) {
+			System.out.println(column.getId().split("Column")[0]);
+			column.setCellValueFactory(new PropertyValueFactory(column.getId().split("Column")[0]));
+		}
+		
+		/*
+		 * InsuranceDao iDao = InsuranceDao.getInsuranceDataBase(); for(InsuranceData
+		 * insurance :iDao.getAllInsurance()) { System.out.println(insurance);
+		 * insuranceTable.getItems().add(insurance); }
+		 */
+		LifeInsurance test = new LifeInsurance("t", "eee", "s", new Date(System.currentTimeMillis()));
+		insuranceTable.getItems().add(test);
 	}
+	
 	
 	public Scene getResult() {
 		return scene;

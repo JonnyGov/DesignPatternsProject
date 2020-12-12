@@ -42,12 +42,12 @@
                         </Label>
                         <AnchorPane layoutY="21.0" styleClass="grid-pane" stylesheets="@../pics/gridPaneStyle.css">
                            <children>
-                              <TableView fx:id="tvISSalesPattern" layoutX="35.0" layoutY="70.0" prefHeight="233.0">
+                              <TableView fx:id="insuranceTable" layoutX="35.0" layoutY="70.0" prefHeight="233.0">
                                 <columns>
-                                  <TableColumn fx:id="idColumn" prefWidth="110.0" text="Name" />
-                                  <TableColumn fx:id="durationColumn" prefWidth="155.0" text="Family Name" />
-                                    <TableColumn fx:id="dieselDiscountColumn" prefWidth="160.0" text="Data" />
-                                    <TableColumn fx:id="gasolineDiscountColumn" prefWidth="160.0" text="Remarks" />
+                                  <TableColumn fx:id="firstNameColumn" prefWidth="110.0" text="Name" />
+                                  <TableColumn fx:id="familyNameColumn" prefWidth="155.0" text="Family Name" />
+                                    <TableColumn fx:id="dataColumn" prefWidth="160.0" text="Data" />
+                                    <TableColumn fx:id="remarksColumn" prefWidth="160.0" text="Remarks" />
                                 </columns>
                               </TableView>
                               <Button fx:id="btnBack" layoutX="228.0" layoutY="322.0" mnemonicParsing="false" onMouseClicked="#btnBackClicked" prefHeight="30.0" prefWidth="200.0" styleClass="confirmation-button" stylesheets="@../pics/style.css" text="back" textFill="WHITE">
