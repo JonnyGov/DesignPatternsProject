@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ViewInsuraceWindowController">
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.ViewInsuraceWindowController">
    <children>
       <BorderPane fx:id="mainBorderPane" styleClass="main-pane" stylesheets="@../pics/style.css">
          <top>
@@ -67,9 +67,9 @@
                         </AnchorPane>
                      </children>
                   </AnchorPane>
-                  <VBox fx:id="VbxAuther" alignment="CENTER_RIGHT" layoutX="660.0" layoutY="339.0">
+                  <VBox fx:id="VbxAuther" alignment="BOTTOM_LEFT" layoutX="660.0" layoutY="339.0">
                      <children>
-                        <Label fx:id="lblVersion" styleClass="main-pane" stylesheets="@../pics/style.css" text="&quot;version&quot;: &quot;1.2&quot;" />
+                        <Label fx:id="lblVersion" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="main-pane" stylesheets="@../pics/style.css" text="&quot;version&quot;: &quot;1.2&quot;" />
                      </children>
                      <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />

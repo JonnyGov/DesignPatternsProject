@@ -1,4 +1,4 @@
-package gui;
+package gui.controller;
 
 import java.util.ArrayList;
 
@@ -55,17 +55,12 @@ public class ViewInsuraceWindowController {
 
     }
     
-    public void setVersion(String text) {
-    	lblVersion.setText(text);
+    public Label getLblVersion() {
+    	return lblVersion;
     }
     
-    public void setAuthor(ArrayList<String> authers) {
-    	for (String auther : authers) {
-    		Label curAutherLable = new Label(auther);
-    		curAutherLable.getStyleClass().add("main-pane");
-    		VbxAuther.getChildren().add(curAutherLable);
-    	}
-    	
+    public VBox getVBxAuthor() {
+    	return VbxAuther;
     }
 
 }

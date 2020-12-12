@@ -1,8 +1,11 @@
-package gui;
+package gui.controller;
 
 import java.io.IOException;
 import java.util.ArrayList;
 
+import gui.App;
+import gui.SceneDirector;
+import gui.ViewInsuranceBuilder;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -56,17 +59,12 @@ public class MainInsuranceController {
     		Button target = (Button) targetObj;
     		switch(target.getId()) {
     		case "btnEmulateView":
-    			try {
-    				ViewInsuranceBuilder builder = new ViewInsuranceBuilder();
-        			new SceneDirector().build(builder);
-        			Stage pStage = App.getPrimaryStage();
-        			pStage.setScene(builder.getResult());
-        			// show is not needed
-        			//pStage.show();
-				} catch (IOException e) {
-					// Auto-generated catch block
-					e.printStackTrace();
-				}
+    			ViewInsuranceBuilder builder = new ViewInsuranceBuilder();
+				new SceneDirector().build(builder);
+				Stage pStage = App.getPrimaryStage();
+				pStage.setScene(builder.getResult());
+				// show is not needed
+				//pStage.show();
     			break;
     		}
     	}else {
@@ -76,17 +74,12 @@ public class MainInsuranceController {
     }
     
     
-    public void setVersion(String text) {
-    	lblVersion.setText(text);
+    public Label getLblVersion() {
+    	return lblVersion;
     }
     
-    public void setAuthor(ArrayList<String> authers) {
-    	for (String auther : authers) {
-    		Label curAutherLable = new Label(auther);
-    		curAutherLable.getStyleClass().add("main-pane");
-    		VbxAuther.getChildren().add(curAutherLable);
-    	}
-    	
+    public VBox getVBxAuthor() {
+    	return VbxAuther;
     }
 
 }

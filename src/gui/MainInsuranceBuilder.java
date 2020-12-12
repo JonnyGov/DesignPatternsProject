@@ -5,8 +5,11 @@ import java.util.ArrayList;
 
 import database.metaData;
 import database.metaDataDao;
+import gui.controller.MainInsuranceController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.layout.VBox;
 
 public class MainInsuranceBuilder implements SceneBuilder {
 	final String fxmlPath;
@@ -47,7 +50,9 @@ public class MainInsuranceBuilder implements SceneBuilder {
 	public void buildVersion() {
 		metaDataDao mdDao = metaDataDao.getMetaDataBase();;
 		metaData md = mdDao.getMetaDataInput();
-		controller.setVersion(md.getVersion());
+		
+		Label lblVersion = controller.getLblVersion();
+		lblVersion.setText("Version: "+md.getVersion());
 	}
 
 	@Override
@@ -58,7 +63,15 @@ public class MainInsuranceBuilder implements SceneBuilder {
 		authers.add(md.name1);
 		authers.add(md.name2);
 		authers.add(md.name3);
-		controller.setAuthor(authers);
+		
+		VBox VbxAuther = controller.getVBxAuthor();
+		for (String auther : authers) {
+    		String text = String.format("auther %d: %s",authers.indexOf(auther)+1,auther);
+    		Label curAutherLable = new Label(text);
+    		curAutherLable.setMaxWidth(Double.MAX_VALUE);
+    		curAutherLable.getStyleClass().add("main-pane");
+    		VbxAuther.getChildren().add(curAutherLable);
+    	}
 	}
 	@Override
 	public void buildInsurenceTitle() {
