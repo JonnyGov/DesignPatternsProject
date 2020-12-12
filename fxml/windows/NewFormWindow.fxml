@@ -15,13 +15,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guiClient.MarketingRepresentativeWindow">
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.NewFormWindowController">
    <children>
       <BorderPane fx:id="mainBorderPane" styleClass="main-pane" stylesheets="@../pics/style.css">
          <top>
             <VBox fx:id="vbox1" BorderPane.alignment="CENTER">
                <children>
-                  <AnchorPane fx:id="titleBar" onMouseDragged="#dragTopBar" onMousePressed="#clickOnTopBar" styleClass="linear-grad-to-top" stylesheets="@../pics/style.css">
+                  <AnchorPane fx:id="titleBar" styleClass="linear-grad-to-top" stylesheets="@../pics/style.css">
                      <children>
                         <Label layoutX="27.0" layoutY="7.0" text="Insurance Company" textAlignment="CENTER" textFill="WHITE">
                            <font>

@@ -11,13 +11,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guiClient.MarketingManagerWindow">
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ViewInsuraceWindowController">
    <children>
       <BorderPane fx:id="mainBorderPane" styleClass="main-pane" stylesheets="@../pics/style.css">
          <top>
             <VBox prefHeight="58.0" prefWidth="600.0" BorderPane.alignment="CENTER">
                <children>
-                  <AnchorPane fx:id="titleBar" onMouseDragged="#dragTopBar" onMousePressed="#clickOnTopBar" styleClass="linear-grad-to-top" stylesheets="@../pics/style.css">
+                  <AnchorPane fx:id="titleBar" styleClass="linear-grad-to-top" stylesheets="@../pics/style.css">
                      <children>
                         <Label layoutX="27.0" layoutY="7.0" text="Insurance Company" textAlignment="CENTER" textFill="WHITE">
                            <font>
@@ -26,7 +26,7 @@
                         </Label>
                      </children>
                   </AnchorPane>
-                  <HBox alignment="CENTER_LEFT" prefHeight="124.0" style="-fx-background-color: #d8dce0;" />
+                  <HBox alignment="CENTER_LEFT" prefHeight="30.0" style="-fx-background-color: #d8dce0;" />
                </children>
             </VBox>
          </top>
@@ -50,7 +50,7 @@
                                     <TableColumn fx:id="gasolineDiscountColumn" prefWidth="160.0" text="Remarks" />
                                 </columns>
                               </TableView>
-                              <Button fx:id="btnISInitiate" layoutX="228.0" layoutY="322.0" mnemonicParsing="false" onMouseClicked="#btnISInitiateClicked" onMouseEntered="#btnISInitiateHover" onMouseExited="#btnISInitiateExit" prefHeight="30.0" prefWidth="200.0" styleClass="confirmation-button" stylesheets="@../pics/style.css" text="back" textFill="WHITE">
+                              <Button fx:id="btnBack" layoutX="228.0" layoutY="322.0" mnemonicParsing="false" onMouseClicked="#btnBackClicked" prefHeight="30.0" prefWidth="200.0" styleClass="confirmation-button" stylesheets="@../pics/style.css" text="back" textFill="WHITE">
                                  <font>
                                     <Font name="Calibri" size="20.0" />
                                  </font>
@@ -67,17 +67,20 @@
                         </AnchorPane>
                      </children>
                   </AnchorPane>
-                  <VBox alignment="CENTER_RIGHT" layoutX="668.0" layoutY="345.0">
+                  <VBox fx:id="VbxAuther" alignment="CENTER_RIGHT" layoutX="660.0" layoutY="339.0">
                      <children>
-                        <Label styleClass="main-pane" stylesheets="@../pics/style.css" text="&quot;version&quot;: &quot;1.2&quot;" />
-                        <Label styleClass="main-pane" stylesheets="@../pics/style.css" text="&quot;student_name_1&quot;:" />
-                        <Label styleClass="main-pane" stylesheets="@../pics/style.css" text="&quot;student_name_1&quot;:" />
-                        <Label styleClass="main-pane" stylesheets="@../pics/style.css" text="&quot;student_name_1&quot;:" />
+                        <Label fx:id="lblVersion" styleClass="main-pane" stylesheets="@../pics/style.css" text="&quot;version&quot;: &quot;1.2&quot;" />
                      </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
                   </VBox>
                </children>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
                <padding>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
             </AnchorPane>
          </center>

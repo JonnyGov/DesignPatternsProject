@@ -1,4 +1,4 @@
-package guiClient;
+package gui;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -14,27 +14,36 @@ import javafx.stage.StageStyle;
  * @version Final
  * @author Elroy, Lior
  */
-public class MainClient extends Application {
+public class App extends Application {
 
 	/**
 	 * opens login window and creates a new instance of login boundary
 	 */
+	private static Stage pStage;
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(getClass().getResource("/windows/MainWindow.fxml"));
-			Scene scene = new Scene(loader.load());
-
-			primaryStage.setResizable(false);
-			primaryStage.setScene(scene);
-			primaryStage.setTitle("MyFuel Login");
+			pStage= primaryStage;
+			pStage.setResizable(false);
+			pStage.setTitle("Insurace Company");
 			//primaryStage.initStyle(StageStyle.UNDECORATED);
-			primaryStage.show();
+			
+			//build scene
+			MainInsuranceBuilder builder = new MainInsuranceBuilder();
+			new SceneDirector().build(builder);
+			
+			//show scene
+			pStage.setScene(builder.getResult());
+			pStage.show();
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
+	
+	public static Stage getPrimaryStage() {
+        return pStage;
+    }
 
 	/**
 	 * 
