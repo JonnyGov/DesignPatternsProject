@@ -18,7 +18,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 
-public class ViewInsuraceWindowController {
+public class ViewInsuranceController {
 
 	@FXML
 	private BorderPane mainBorderPane;

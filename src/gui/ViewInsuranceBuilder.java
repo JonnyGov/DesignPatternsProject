@@ -9,7 +9,7 @@ import database.metaData;
 import database.metaDataDao;
 import entity.InsuranceData;
 import entity.LifeInsurance;
-import gui.controller.ViewInsuraceWindowController;
+import gui.controller.ViewInsuranceController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -22,7 +22,7 @@ public class ViewInsuranceBuilder implements SceneBuilder {
 	private final String fxmlPath;
 	private FXMLLoader loader;
 	private Scene scene;
-	private ViewInsuraceWindowController controller;
+	private ViewInsuranceController controller;
 
 
 	public ViewInsuranceBuilder() {
@@ -46,7 +46,7 @@ public class ViewInsuranceBuilder implements SceneBuilder {
 
 	@Override
 	public void buildController() {
-		if(loader.getController() instanceof ViewInsuraceWindowController) {
+		if(loader.getController() instanceof ViewInsuranceController) {
 			controller = loader.getController();
 		}else {
 			throw new RuntimeException("Builder loader isn't match to Builder type");
@@ -92,7 +92,7 @@ public class ViewInsuranceBuilder implements SceneBuilder {
 			column.setCellValueFactory(new PropertyValueFactory(column.getId().split("Column")[0]));
 		}
 
-
+//ofek look at this
 		InsuranceDao iDao = InsuranceDao.getInsuranceDataBase(); 
 		for(InsuranceData insurance : iDao.getAllInsurance()) {
 			System.out.println(insurance.getFamilyName());
@@ -101,6 +101,7 @@ public class ViewInsuranceBuilder implements SceneBuilder {
 
 		LifeInsurance test = new LifeInsurance("t", "eee", "s", new Date(System.currentTimeMillis()));
 		insuranceTable.getItems().add(test);
+// end ofek looking :D
 	}
 
 
