@@ -24,7 +24,7 @@ import entity.CreateInsuraceFacade;
 import entity.InsuranceData;
 import entity.InsuranceData.InsuranceType;
 
-final class Logger implements InsuranceDao, metaDataDao {
+final class Logger implements InsuranceDao, metaDataDao,Admin {
 	private final static Logger singelton = new Logger();
 	private ArrayList<InsuranceData> insurances;
 	private final static String dataBaseFolder= "database/";
@@ -44,11 +44,9 @@ final class Logger implements InsuranceDao, metaDataDao {
 		getMetaDataInput(); // update metaInput
 
 	}
-
 	public static Logger getLogger() {
 		return singelton;
 	}
-
 	@Override
 	public void addInsurace(String name, String namilyName , Date date,String remarks ,InsuranceType type) {
 		String jsonStr;
@@ -182,6 +180,33 @@ final class Logger implements InsuranceDao, metaDataDao {
 			return elem;
 		}
 	}
+
+	@Override
+	public void updateVersion(String ver) {
+		getMetaDataInput();
+		meta.version=ver;
+		String update=gson.toJson(meta);
+		wrtieToFile(metaDataPath, update);
+		
+	}
+	@Override
+	public void deleteInsurance(int index) {
+		getAllInsurance();
+		insurances.remove(index);
+		String update=gson.toJson(insurances,InsuranceDataListType);
+		wrtieToFile(insurancesDataPath, update);
+		
+		
+	}
+	@Override
+	public void deleteAllInsurances() {
+		insurances.clear();
+		String update=gson.toJson(insurances,InsuranceDataListType);
+		wrtieToFile(insurancesDataPath, update);
+		
+	}
+
+
 
 	
 }

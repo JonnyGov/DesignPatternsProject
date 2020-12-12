@@ -3,8 +3,9 @@ package database.test;
 import java.util.ArrayList;
 import java.util.Date;
 
-
+import database.Admin;
 import database.InsuranceDao;
+import database.dataBaseAdapter;
 import database.metaDataDao;
 import entity.CreateInsuraceFacade;
 import entity.InsuranceData;
@@ -23,7 +24,21 @@ private static void printInsurance(ArrayList <InsuranceData> insurances) {
 	System.out.println("------------------------------------------");
 	}
 }
+public static void adminTest() {
+	System.out.println("Admin testing....");
+	dataBaseAdapter.setLoggerDB();
+	Admin admin=Admin.getAdmin();
+	admin.deleteInsurance(1);
+	admin.updateVersion("AdminTest");
+	printInsurance(Admin.insuranceNotAdminMethods().getAllInsurance());
+	System.out.println("printing meta data.....");
+	System.out.println(Admin.metaDataNotAdminMethods().getMetaDataInput());
+	admin.deleteAllInsurances();
+	printInsurance(Admin.insuranceNotAdminMethods().getAllInsurance());
+	
+}
 public static void main(String[] args) {
+	dataBaseAdapter.setLoggerDB();
 	InsuranceDao insuranceData = InsuranceDao.getInsuranceDataBase();
 	metaDataDao metaData = metaDataDao.getMetaDataBase();
 	Date d =new Date();
@@ -43,6 +58,7 @@ public static void main(String[] args) {
 	printInsurance(insuranceData.getAllInsurance());
 	System.out.println("printing meta data.....");
 	System.out.println(metaData.getMetaDataInput());
+	adminTest();
 	
 }
 }
