@@ -33,7 +33,7 @@
                <children>
                   <AnchorPane>
                      <children>
-                        <Label fx:id="lblTitle" layoutX="4.0" layoutY="-4.0" prefHeight="21.0" prefWidth="215.0" text="New Car Insurance">
+                        <Label fx:id="lblTitle" layoutX="4.0" layoutY="-4.0" prefHeight="21.0" text="New Car Insurance">
                            <font>
                               <Font name="Arial Bold" size="18.0" />
                            </font>
