@@ -1,6 +1,8 @@
 package gui;
 
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -26,13 +28,19 @@ public class ViewInsuranceBuilder implements SceneBuilder {
 
 
 	public ViewInsuranceBuilder() {
-		fxmlPath= "/windows/ViewInsurance.fxml";
+		fxmlPath= "fxml/windows/ViewInsurance.fxml";
 	}
 
 	@Override
 	public void buildLoader() {
-		loader = new FXMLLoader();
-		loader.setLocation(getClass().getResource(fxmlPath));
+		try {
+			loader = new FXMLLoader();
+			URL url = new URL("file:"+fxmlPath);
+			loader.setLocation(url);
+		} catch (MalformedURLException e) {
+			// Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	@Override
 	public void buildScene() {
@@ -95,7 +103,6 @@ public class ViewInsuranceBuilder implements SceneBuilder {
 //ofek look at this
 		InsuranceDao iDao = InsuranceDao.getInsuranceDataBase(); 
 		for(InsuranceData insurance : iDao.getAllInsurance()) {
-			System.out.println(insurance.getFamilyName());
 			insuranceTable.getItems().add(insurance);
 		}
 

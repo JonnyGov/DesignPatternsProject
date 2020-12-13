@@ -20,7 +20,6 @@ public class App extends Application {
 	private static Stage pStage;
 	@Override
 	public void start(Stage primaryStage) {
-		Tester.main(null);
 		try {
 			pStage= primaryStage;
 			pStage.setResizable(false);

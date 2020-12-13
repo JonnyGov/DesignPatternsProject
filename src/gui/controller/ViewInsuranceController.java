@@ -7,7 +7,11 @@ import com.sun.xml.internal.ws.util.StringUtils;
 
 import entity.InsuranceData;
 import entity.LifeInsurance;
+import gui.App;
+import gui.MainInsuranceBuilder;
+import gui.SceneDirector;
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
@@ -36,13 +40,13 @@ public class ViewInsuranceController {
 	private TableView<InsuranceData> insuranceTable;
 
 	@FXML
-	private TableColumn<InsuranceData, String> FirstNameColumn;
+	private TableColumn<InsuranceData, String> NameColumn;
 
 	@FXML
 	private TableColumn<InsuranceData, String> FamilyNameColumn;
 
 	@FXML
-	private TableColumn<InsuranceData, Date> DataColumn;
+	private TableColumn<InsuranceData, Date> DateColumn;
 
 	@FXML
 	private TableColumn<InsuranceData, InsuranceData> RemarksColumn;
@@ -59,7 +63,10 @@ public class ViewInsuranceController {
 
 	@FXML
 	void btnBackClicked(MouseEvent event) {
-
+		MainInsuranceBuilder builder = new MainInsuranceBuilder();
+		new SceneDirector().build(builder);
+		Scene scene = ((MainInsuranceBuilder) builder).getResult();
+		App.getPrimaryStage().setScene(scene);
 	}
 	
 	public TableView<InsuranceData> getInsuranceTable() {

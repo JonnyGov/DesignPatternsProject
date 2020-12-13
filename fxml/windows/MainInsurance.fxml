@@ -10,7 +10,7 @@
 
 <VBox xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.MainInsuranceController">
    <children>
-      <AnchorPane fx:id="titleBar" styleClass="linear-grad-to-top" stylesheets="@../pics/style.css">
+      <AnchorPane styleClass="linear-grad-to-top" stylesheets="@../pics/style.css">
          <children>
             <Label layoutX="10.0" layoutY="7.0" text="Insurance Company" textAlignment="CENTER" textFill="WHITE">
                <font>
@@ -20,9 +20,9 @@
          </children>
       </AnchorPane>
       <HBox prefHeight="30.0" style="-fx-background-color: #d8dce0;" VBox.vgrow="ALWAYS" />
-      <AnchorPane fx:id="emuPane" styleClass="grid-pane" stylesheets="@../pics/gridPaneStyle.css">
+      <AnchorPane styleClass="grid-pane" stylesheets="@../pics/gridPaneStyle.css">
          <children>
-            <AnchorPane fx:id="step1f" layoutX="17.0" layoutY="65.0">
+            <AnchorPane layoutX="17.0" layoutY="65.0">
                <children>
                   <VBox alignment="CENTER" minWidth="300.0" spacing="10.0">
                      <children>
@@ -58,7 +58,7 @@
                   <Font name="Arial" size="16.0" />
                </font>
             </Label>
-            <AnchorPane fx:id="step2f" layoutX="15.9765625" layoutY="243.0">
+            <AnchorPane layoutX="15.9765625" layoutY="243.0">
                <children>
                   <Label text="View" textFill="#144465" underline="true">
                      <font>

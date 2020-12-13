@@ -1,6 +1,8 @@
 package gui;
 
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 
 import database.metaData;
@@ -19,14 +21,21 @@ public class MainInsuranceBuilder implements SceneBuilder {
 	
 	
 	public MainInsuranceBuilder() {
-		fxmlPath= "/windows/MainInsurance.fxml";
+		fxmlPath= "fxml/windows/MainInsurance.fxml";
 	}
 
 	@Override
 	public void buildLoader() {
-		loader = new FXMLLoader();
-		loader.setLocation(getClass().getResource(fxmlPath));
+		try {
+			loader = new FXMLLoader();
+			URL url = new URL("file:"+fxmlPath);
+			loader.setLocation(url);
+		} catch (MalformedURLException e) {
+			// Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
+		
 	@Override
 	public void buildScene() {
 		try {
@@ -83,7 +92,7 @@ public class MainInsuranceBuilder implements SceneBuilder {
 		return;
 	}
 	
-	public Scene getResult() throws IOException {
+	public Scene getResult() {
 		return scene;
 	}
 

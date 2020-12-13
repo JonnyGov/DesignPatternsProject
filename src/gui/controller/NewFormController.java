@@ -1,75 +1,86 @@
 package gui.controller;
+import java.util.Date;
+
+import database.InsuranceDao;
+import entity.InsuranceData;
+import entity.InsuranceData.InsuranceType;
+import gui.App;
+import gui.MainInsuranceBuilder;
+import gui.SceneDirector;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 
 public class NewFormController {
 
-    @FXML
-    private BorderPane mainBorderPane;
+	@FXML
+	private Label lblTitle;
 
-    @FXML
-    private VBox vbox1;
+	@FXML
+	private TextField tfName;
 
-    @FXML
-    private AnchorPane titleBar;
+	@FXML
+	private TextField tfFamilyName;
 
-    @FXML
-    private AnchorPane mainwindow_pane;
+	 @FXML
+	 private DatePicker dpDate;
 
-    @FXML
-    private AnchorPane addEditCustomerPane;
+	@FXML
+	private TextField tfRemarks;
 
-    @FXML
-    private TextField tfAECUCustID;
+	@FXML
+	private TextField tfCreditCard;
 
-    @FXML
-    private TextField tfAECUFirstName;
+	 @FXML
+	private Button btnSave;
 
-    @FXML
-    private TextField tfAECUSurname;
+	@FXML
+	private Button btnClose;
 
-    @FXML
-    private TextField tfAECUEmail;
+	@FXML
+	private VBox vbxAuther;
 
-    @FXML
-    private TextField tfAECUCredit;
+	@FXML
+	private Label lblVersion;
 
-    @FXML
-    private Button btnAECUSave;
+	@FXML
+	void btnAECUSavePressed(ActionEvent event) {
+		Object targetObj = event.getSource();
+		if(targetObj instanceof Button) {
+			Button target = (Button) targetObj;
 
-    @FXML
-    private Button btnAECUSave1;
+			switch(target.getId()) {
+			case "btnClose":
+				MainInsuranceBuilder builder = new MainInsuranceBuilder();
+				new SceneDirector().build(builder);
+				Scene scene = ((MainInsuranceBuilder) builder).getResult();
+				App.getPrimaryStage().setScene(scene);
+				break;
+			case "btnSave":
+				System.out.println("presses");
+				Date date = java.sql.Date.valueOf(dpDate.getValue());
+				InsuranceType type = InsuranceData.InsuranceType.valueOf(lblTitle.getText().split(" ")[1]);
+				InsuranceDao iDao = InsuranceDao.getInsuranceDataBase();
+				iDao.addInsurace(tfName.getText(),tfFamilyName.getText(),date, tfCreditCard.getText(),type);
+			}
+		}
+	}
 
-    @FXML
-    private VBox vbxAuther;
+	public Label getLblVersion() {
+		return lblVersion;
+	}
 
-    @FXML
-    private Label lblVersion;
-    
-    @FXML
-    private Label lblTitle;
+	public Label getLblTitle() {
+		return lblTitle;
+	}
 
-    @FXML
-    void btnAECUSavePressed(ActionEvent event) {
-
-    }
- 
-    public Label getLblVersion() {
-    	return lblVersion;
-    }
-    
-    public Label getLblTitle() {
-    	return lblTitle;
-    }
-    
-    public VBox getVBxAuthor() {
-    	return vbxAuther;
-    }
+	public VBox getVBxAuthor() {
+		return vbxAuther;
+	}
 
 }
