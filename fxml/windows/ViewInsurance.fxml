@@ -50,7 +50,7 @@
                                     <TableColumn fx:id="RemarksColumn" prefWidth="160.0" text="Remarks" />
                                 </columns>
                               </TableView>
-                              <Button fx:id="btnBack" layoutX="228.0" layoutY="322.0" mnemonicParsing="false" onMouseClicked="#btnBackClicked" prefHeight="30.0" prefWidth="200.0" styleClass="confirmation-button" stylesheets="@../pics/style.css" text="back" textFill="WHITE">
+                              <Button fx:id="btnBack" layoutX="228.0" layoutY="322.0" mnemonicParsing="false" onMouseClicked="#btnBackClicked" prefHeight="30.0" prefWidth="200.0" styleClass="cancel-button" stylesheets="@../pics/style.css" text="back" textFill="WHITE">
                                  <font>
                                     <Font name="Calibri" size="20.0" />
                                  </font>
