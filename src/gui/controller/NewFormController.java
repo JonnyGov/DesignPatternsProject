@@ -1,4 +1,5 @@
 package gui.controller;
+import java.util.ArrayList;
 import java.util.Date;
 
 import database.InsuranceDao;
@@ -38,14 +39,6 @@ public class NewFormController {
 
 	@FXML
 	private TextField tfCreditCard;
-	
-	private void clearTextFields() {
-		tfName.clear();
-		tfFamilyName.clear();
-		dpDate.getEditor().clear();
-		tfRemarks.clear();
-		tfCreditCard.clear();
-	}
 
 	 @FXML
 	private Button btnSave;
@@ -58,37 +51,25 @@ public class NewFormController {
 
 	@FXML
 	private Label lblVersion;
-
-	@FXML
-	void btnAECUSavePressed(ActionEvent event) {
-		Object targetObj = event.getSource();
-		if(targetObj instanceof Button) {
-			Button target = (Button) targetObj;
-
-			switch(target.getId()) {
-			case "btnClose":
-				MainInsuranceBuilder builder = new MainInsuranceBuilder();
-				new SceneDirector().build(builder);
-				Scene scene = ((MainInsuranceBuilder) builder).getResult();
-				App.getPrimaryStage().setScene(scene);
-				break;
-			case "btnSave":
-				java.sql.Date sdate = java.sql.Date.valueOf(dpDate.getValue());
-				Date udate = new Date(sdate.getTime());
-				InsuranceType type = InsuranceData.InsuranceType.valueOf(lblTitle.getText().split(" ")[1]);
-				InsuranceDao iDao = InsuranceDao.getInsuranceDataBase();
-				CreateInsuraceFacade creator = new CreateInsuraceFacade();
-				InsuranceData insurance = creator.createInsurance(tfName.getText(),tfFamilyName.getText(),udate, tfCreditCard.getText(),type);
-				iDao.addInsurace(insurance);
-				popUpMessage();
-				clearTextFields();
-			}
-		}
+	
+	public void clearTextFields() {
+		tfName.clear();
+		tfFamilyName.clear();
+		dpDate.getEditor().clear();
+		tfRemarks.clear();
+		tfCreditCard.clear();
 	}
 	
-	
+	public InsuranceData getInsuranceFromFields() {
+		java.sql.Date sdate = java.sql.Date.valueOf(dpDate.getValue());
+		Date udate = new Date(sdate.getTime());
+		InsuranceType type = InsuranceData.InsuranceType.valueOf(lblTitle.getText().split(" ")[1]);
+		CreateInsuraceFacade creator = new CreateInsuraceFacade();
+		InsuranceData insurance = creator.createInsurance(tfName.getText(),tfFamilyName.getText(),udate, tfCreditCard.getText(),type);
+		return insurance;
+	}
 
-	private void popUpMessage() {
+	public void popUpMessage() {
 		Alert alert = new Alert(AlertType.INFORMATION);
         alert.setTitle("success");
         alert.setHeaderText("Added new insurance");
@@ -106,6 +87,13 @@ public class NewFormController {
 
 	public VBox getVBxAuthor() {
 		return vbxAuther;
+	}
+	
+	public ArrayList<Button> getButtons(){
+		ArrayList<Button> listButton = new ArrayList<Button>();
+		listButton.add(btnClose);
+		listButton.add(btnSave);
+		return listButton;
 	}
 
 }

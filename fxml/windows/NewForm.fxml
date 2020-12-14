@@ -108,7 +108,7 @@
                                     <Insets right="50.0" />
                                  </GridPane.margin>
                               </TextField>
-                              <Button fx:id="btnSave" defaultButton="true" focusTraversable="false" mnemonicParsing="false" onAction="#btnAECUSavePressed" prefHeight="40.0" prefWidth="200.0" styleClass="confirmation-button" stylesheets="@../pics/style.css" text="Save Customer" textFill="WHITE" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="12">
+                              <Button fx:id="btnSave" defaultButton="true" focusTraversable="false" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" styleClass="confirmation-button" stylesheets="@../pics/style.css" text="Save Customer" textFill="WHITE" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="12">
                                  <font>
                                     <Font name="Calibri" size="19.0" />
                                  </font>
@@ -128,7 +128,7 @@
                                     <Font name="Arial" size="16.0" />
                                  </font>
                               </Label>
-                              <Button fx:id="btnClose" cancelButton="true" focusTraversable="false" mnemonicParsing="false" onAction="#btnAECUSavePressed" prefHeight="40.0" prefWidth="200.0" styleClass="cancel-button" stylesheets="@../pics/style.css" text="Close" textFill="WHITE" wrapText="true" GridPane.columnIndex="3" GridPane.rowIndex="12">
+                              <Button fx:id="btnClose" cancelButton="true" focusTraversable="false" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" styleClass="cancel-button" stylesheets="@../pics/style.css" text="Close" textFill="WHITE" wrapText="true" GridPane.columnIndex="3" GridPane.rowIndex="12">
                                  <font>
                                     <Font name="Calibri" size="19.0" />
                                  </font>

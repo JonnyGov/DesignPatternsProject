@@ -10,5 +10,6 @@ public class SceneDirector {
 		builder.buildAuthors();
 		builder.buildInsurenceTitle();
 		builder.buildViewPurchases();
+		builder.buildButtons();
 	}
 }

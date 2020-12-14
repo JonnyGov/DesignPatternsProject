@@ -8,4 +8,5 @@ public interface SceneBuilder {
 	public void buildAuthors();
 	public void buildInsurenceTitle();
 	public void buildViewPurchases();
+	public void buildButtons();
 }

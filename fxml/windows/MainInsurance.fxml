@@ -26,22 +26,22 @@
                <children>
                   <VBox alignment="CENTER" minWidth="300.0" spacing="10.0">
                      <children>
-                        <Button fx:id="btnEmulateCar" mnemonicParsing="false" onAction="#btnEmulatePressed" prefHeight="30.0" prefWidth="200.0" styleClass="task-button" stylesheets="@../pics/style.css" text="Car Ins." textFill="WHITE">
+                        <Button fx:id="btnEmulateCar" mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0" styleClass="task-button" stylesheets="@../pics/style.css" text="Car Ins." textFill="WHITE">
                            <font>
                               <Font name="Calibri" size="20.0" />
                            </font>
                         </Button>
-                        <Button fx:id="btnEmulateLife" mnemonicParsing="false" onAction="#btnEmulatePressed" prefHeight="30.0" prefWidth="200.0" styleClass="task-button" stylesheets="@../pics/style.css" text="Life Ins." textFill="WHITE">
+                        <Button fx:id="btnEmulateLife" mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0" styleClass="task-button" stylesheets="@../pics/style.css" text="Life Ins." textFill="WHITE">
                            <font>
                               <Font name="Calibri" size="20.0" />
                            </font>
                         </Button>
-                        <Button fx:id="btnEmulateAprt" mnemonicParsing="false" onAction="#btnEmulatePressed" prefHeight="30.0" prefWidth="200.0" styleClass="task-button" stylesheets="@../pics/style.css" text="Apartment Ins." textFill="WHITE">
+                        <Button fx:id="btnEmulateAprt" mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0" styleClass="task-button" stylesheets="@../pics/style.css" text="Apartment Ins." textFill="WHITE">
                            <font>
                               <Font name="Calibri" size="20.0" />
                            </font>
                         </Button>
-                        <Button fx:id="btnEmulateHealth" mnemonicParsing="false" onAction="#btnEmulatePressed" prefHeight="30.0" prefWidth="200.0" styleClass="task-button" stylesheets="@../pics/style.css" text="Health Ins." textFill="WHITE">
+                        <Button fx:id="btnEmulateHealth" mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0" styleClass="task-button" stylesheets="@../pics/style.css" text="Health Ins." textFill="WHITE">
                            <font>
                               <Font name="Calibri" size="20.0" />
                            </font>
@@ -67,7 +67,7 @@
                   </Label>
                   <VBox alignment="CENTER" minWidth="300.0" spacing="10.0">
                      <children>
-                        <Button fx:id="btnEmulateView" mnemonicParsing="false" onAction="#btnEmulatePressed" prefHeight="30.0" prefWidth="200.0" styleClass="task-button" stylesheets="@../pics/style.css" text="View all purchases" textFill="WHITE">
+                        <Button fx:id="btnEmulateView" mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0" styleClass="task-button" stylesheets="@../pics/style.css" text="View all purchases" textFill="WHITE">
                            <font>
                               <Font name="Calibri" size="20.0" />
                            </font>

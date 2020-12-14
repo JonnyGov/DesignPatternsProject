@@ -4,12 +4,19 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Date;
 
+import database.InsuranceDao;
 import database.metaData;
 import database.metaDataDao;
+import entity.CreateInsuraceFacade;
+import entity.InsuranceData;
+import entity.InsuranceData.InsuranceType;
 import gui.controller.NewFormController;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 
@@ -19,11 +26,11 @@ public class NewFormBuilder implements SceneBuilder {
 	private Scene scene;
 	private NewFormController controller;
 	private String title;
-	
-	
-	public NewFormBuilder(String title) {
+
+
+	public NewFormBuilder(InsuranceType type) {
 		fxmlPath= "fxml/windows/NewForm.fxml";
-		this.title = title;
+		this.title = "New "+ type.toString() +" Insurance";
 	}
 
 	@Override
@@ -46,7 +53,7 @@ public class NewFormBuilder implements SceneBuilder {
 			e.printStackTrace();
 		}
 	}
-	
+
 	@Override
 	public void buildController() {
 		if(loader.getController() instanceof NewFormController) {
@@ -60,7 +67,7 @@ public class NewFormBuilder implements SceneBuilder {
 	public void buildVersion() {
 		metaDataDao mdDao = metaDataDao.getMetaDataBase();;
 		metaData md = mdDao.getMetaDataInput();
-		
+
 		Label lblVersion = controller.getLblVersion();
 		lblVersion.setText("Version: "+md.getVersion());
 	}
@@ -73,15 +80,15 @@ public class NewFormBuilder implements SceneBuilder {
 		authers.add(md.name1);
 		authers.add(md.name2);
 		authers.add(md.name3);
-		
+
 		VBox VbxAuther = controller.getVBxAuthor();
 		for (String auther : authers) {
-    		String text = String.format("auther %d: %s",authers.indexOf(auther)+1,auther);
-    		Label curAutherLable = new Label(text);
-    		curAutherLable.setMaxWidth(Double.MAX_VALUE);
-    		curAutherLable.getStyleClass().add("main-pane");
-    		VbxAuther.getChildren().add(curAutherLable);
-    	}
+			String text = String.format("auther %d: %s",authers.indexOf(auther)+1,auther);
+			Label curAutherLable = new Label(text);
+			curAutherLable.setMaxWidth(Double.MAX_VALUE);
+			curAutherLable.getStyleClass().add("main-pane");
+			VbxAuther.getChildren().add(curAutherLable);
+		}
 	}
 	@Override
 	public void buildInsurenceTitle() {
@@ -93,10 +100,42 @@ public class NewFormBuilder implements SceneBuilder {
 	public void buildViewPurchases() {
 		return;
 	}
-	
+
 	public Scene getResult() {
 		return scene;
 	}
 
-	
+	@Override
+	public void buildButtons() {
+		for (Button button : controller.getButtons()) {
+			button.setOnAction(
+					new javafx.event.EventHandler<ActionEvent>() {
+						@Override
+						public void handle(ActionEvent event) {
+							Object targetObj = event.getSource();
+							if(targetObj instanceof Button) {
+								Button target = (Button) targetObj;
+
+								switch(target.getId()) {
+								case "btnClose":
+									MainInsuranceBuilder builder = new MainInsuranceBuilder();
+									new SceneDirector().build(builder);
+									Scene scene = ((MainInsuranceBuilder) builder).getResult();
+									App.getPrimaryStage().setScene(scene);
+									break;
+								case "btnSave":
+									InsuranceData insurance = controller.getInsuranceFromFields();
+									InsuranceDao iDao = InsuranceDao.getInsuranceDataBase();
+									iDao.addInsurace(insurance);
+									controller.popUpMessage();
+									controller.clearTextFields();
+								}
+							}
+						}
+					});
+		}
+
+	}
+
+
 }

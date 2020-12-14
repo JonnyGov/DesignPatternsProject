@@ -12,8 +12,10 @@ import database.metaDataDao;
 import entity.InsuranceData;
 import entity.LifeInsurance;
 import gui.controller.ViewInsuranceController;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -108,6 +110,23 @@ public class ViewInsuranceBuilder implements SceneBuilder {
 
 	public Scene getResult() {
 		return scene;
+	}
+
+	@Override
+	public void buildButtons() {
+		for (Button button : controller.getButtons()) {
+			button.setOnAction(
+					new javafx.event.EventHandler<ActionEvent>() {
+						@Override
+						public void handle(ActionEvent event) {
+							MainInsuranceBuilder builder = new MainInsuranceBuilder();
+							new SceneDirector().build(builder);
+							Scene scene = ((MainInsuranceBuilder) builder).getResult();
+							App.getPrimaryStage().setScene(scene);
+						}
+					});
+		}
+		
 	}
 
 

@@ -1,12 +1,10 @@
 package gui.controller;
 
 
+import java.util.ArrayList;
 import java.util.Date;
 
-import com.sun.xml.internal.ws.util.StringUtils;
-
 import entity.InsuranceData;
-import entity.LifeInsurance;
 import gui.App;
 import gui.MainInsuranceBuilder;
 import gui.SceneDirector;
@@ -16,7 +14,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
@@ -60,15 +57,6 @@ public class ViewInsuranceController {
 	@FXML
 	private Button btnBack;
 
-
-	@FXML
-	void btnBackClicked(MouseEvent event) {
-		MainInsuranceBuilder builder = new MainInsuranceBuilder();
-		new SceneDirector().build(builder);
-		Scene scene = ((MainInsuranceBuilder) builder).getResult();
-		App.getPrimaryStage().setScene(scene);
-	}
-	
 	public TableView<InsuranceData> getInsuranceTable() {
 		return insuranceTable;
 	}
@@ -79,6 +67,12 @@ public class ViewInsuranceController {
 
 	public VBox getVBxAuthor() {
 		return VbxAuther;
+	}
+
+	public ArrayList<Button> getButtons() {
+		ArrayList<Button> listButton = new ArrayList<Button>();
+		listButton.add(btnBack);
+		return listButton;
 	}
 
 }
