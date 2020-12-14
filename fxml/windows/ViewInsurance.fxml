@@ -46,8 +46,8 @@
                                 <columns>
                                   <TableColumn fx:id="NameColumn" prefWidth="110.0" text="Name" />
                                   <TableColumn fx:id="FamilyNameColumn" prefWidth="155.0" text="Family Name" />
-                                    <TableColumn fx:id="DateColumn" prefWidth="160.0" text="Date" />
-                                    <TableColumn fx:id="RemarksColumn" prefWidth="160.0" text="Remarks" />
+                                    <TableColumn fx:id="DateColumn" prefWidth="180.0" text="Date" />
+                                    <TableColumn fx:id="RemarksColumn" prefWidth="140.0" text="Remarks" />
                                 </columns>
                               </TableView>
                               <Button fx:id="btnBack" layoutX="228.0" layoutY="322.0" mnemonicParsing="false" onMouseClicked="#btnBackClicked" prefHeight="30.0" prefWidth="200.0" styleClass="cancel-button" stylesheets="@../pics/style.css" text="back" textFill="WHITE">
