@@ -1,7 +1,7 @@
 package gui.controller;
 import java.util.Date;
-
 import database.InsuranceDao;
+import entity.CreateInsuraceFacade;
 import entity.InsuranceData;
 import entity.InsuranceData.InsuranceType;
 import gui.App;
@@ -62,11 +62,13 @@ public class NewFormController {
 				App.getPrimaryStage().setScene(scene);
 				break;
 			case "btnSave":
-				System.out.println("presses");
-				Date date = java.sql.Date.valueOf(dpDate.getValue());
+				java.sql.Date sdate = java.sql.Date.valueOf(dpDate.getValue());
+				Date udate = new Date(sdate.getTime());
 				InsuranceType type = InsuranceData.InsuranceType.valueOf(lblTitle.getText().split(" ")[1]);
 				InsuranceDao iDao = InsuranceDao.getInsuranceDataBase();
-				iDao.addInsurace(tfName.getText(),tfFamilyName.getText(),date, tfCreditCard.getText(),type);
+				CreateInsuraceFacade creator = new CreateInsuraceFacade();
+				InsuranceData insurance = creator.createInsurance(tfName.getText(),tfFamilyName.getText(),udate, tfCreditCard.getText(),type);
+				iDao.addInsurace(insurance);
 			}
 		}
 	}

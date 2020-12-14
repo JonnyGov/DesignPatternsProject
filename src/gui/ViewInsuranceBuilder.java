@@ -99,16 +99,10 @@ public class ViewInsuranceBuilder implements SceneBuilder {
 		for(TableColumn column :  insuranceTable.getColumns()) {
 			column.setCellValueFactory(new PropertyValueFactory(column.getId().split("Column")[0]));
 		}
-
-//ofek look at this
 		InsuranceDao iDao = InsuranceDao.getInsuranceDataBase(); 
 		for(InsuranceData insurance : iDao.getAllInsurance()) {
 			insuranceTable.getItems().add(insurance);
 		}
-
-		LifeInsurance test = new LifeInsurance("t", "eee", "s", new Date(System.currentTimeMillis()));
-		insuranceTable.getItems().add(test);
-// end ofek looking :D
 	}
 
 
