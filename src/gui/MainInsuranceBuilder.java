@@ -14,10 +14,10 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 
 public class MainInsuranceBuilder implements SceneBuilder {
-	final String fxmlPath;
-	FXMLLoader loader;
-	Scene scene;
-	MainInsuranceController controller;
+	private final String fxmlPath;
+	private FXMLLoader loader;
+	private Scene scene;
+	private MainInsuranceController controller;
 	
 	
 	public MainInsuranceBuilder() {
