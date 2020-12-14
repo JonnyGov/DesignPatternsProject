@@ -1,5 +1,6 @@
 package gui.controller;
 import java.util.Date;
+
 import database.InsuranceDao;
 import entity.CreateInsuraceFacade;
 import entity.InsuranceData;
@@ -10,6 +11,8 @@ import gui.SceneDirector;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
@@ -35,6 +38,14 @@ public class NewFormController {
 
 	@FXML
 	private TextField tfCreditCard;
+	
+	private void clearTextFields() {
+		tfName.clear();
+		tfFamilyName.clear();
+		dpDate.getEditor().clear();
+		tfRemarks.clear();
+		tfCreditCard.clear();
+	}
 
 	 @FXML
 	private Button btnSave;
@@ -69,8 +80,20 @@ public class NewFormController {
 				CreateInsuraceFacade creator = new CreateInsuraceFacade();
 				InsuranceData insurance = creator.createInsurance(tfName.getText(),tfFamilyName.getText(),udate, tfCreditCard.getText(),type);
 				iDao.addInsurace(insurance);
+				popUpMessage();
+				clearTextFields();
 			}
 		}
+	}
+	
+	
+
+	private void popUpMessage() {
+		Alert alert = new Alert(AlertType.INFORMATION);
+        alert.setTitle("success");
+        alert.setHeaderText("Added new insurance");
+        alert.setContentText("your insurace added seccessfully");
+        alert.showAndWait();
 	}
 
 	public Label getLblVersion() {
