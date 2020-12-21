@@ -4,12 +4,10 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Date;
 
 import database.InsuranceDao;
 import database.metaData;
 import database.metaDataDao;
-import entity.CreateInsuraceFacade;
 import entity.InsuranceData;
 import entity.InsuranceData.InsuranceType;
 import gui.controller.NewFormController;

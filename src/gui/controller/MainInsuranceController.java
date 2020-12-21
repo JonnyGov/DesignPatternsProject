@@ -2,15 +2,7 @@ package gui.controller;
 
 import java.util.ArrayList;
 
-import entity.InsuranceData.InsuranceType;
-import gui.App;
-import gui.NewFormBuilder;
-import gui.SceneBuilder;
-import gui.SceneDirector;
-import gui.ViewInsuranceBuilder;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;

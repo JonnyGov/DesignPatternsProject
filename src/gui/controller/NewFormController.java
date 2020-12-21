@@ -2,16 +2,10 @@ package gui.controller;
 import java.util.ArrayList;
 import java.util.Date;
 
-import database.InsuranceDao;
 import entity.CreateInsuraceFacade;
 import entity.InsuranceData;
 import entity.InsuranceData.InsuranceType;
-import gui.App;
-import gui.MainInsuranceBuilder;
-import gui.SceneDirector;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;

@@ -1,6 +1,5 @@
 package gui;
 
-import database.test.Tester;
 import javafx.application.Application;
 import javafx.stage.Stage;
 

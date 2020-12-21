@@ -5,16 +5,11 @@ import java.util.ArrayList;
 import java.util.Date;
 
 import entity.InsuranceData;
-import gui.App;
-import gui.MainInsuranceBuilder;
-import gui.SceneDirector;
 import javafx.fxml.FXML;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
