@@ -3,19 +3,8 @@ package gui;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
-/**
- * client's exe starts here
- * <p>
- * loads login window
- * 
- * @version Final
- * @author Elroy, Lior
- */
 public class App extends Application {
 
-	/**
-	 * opens login window and creates a new instance of login boundary
-	 */
 	private static Stage pStage;
 	@Override
 	public void start(Stage primaryStage) {
@@ -42,11 +31,6 @@ public class App extends Application {
         return pStage;
     }
 
-	/**
-	 * 
-	 * @param args
-	 * @throws Exception
-	 */
 	public static void main(String args[]) throws Exception {
 		launch(args);
 	}
