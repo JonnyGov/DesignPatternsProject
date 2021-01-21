@@ -11,6 +11,6 @@ public interface InsuranceDao {
     public void addInsurace(InsuranceData insurance);
     public ArrayList<InsuranceData> getAllInsurance();
     public static InsuranceDao getInsuranceDataBase() {
-    	return dataBaseAdapter.getInsuranceDB();
+    	return dataBaseStartegy.getInsuranceDB();
     }
 }

@@ -1,12 +1,15 @@
 package database;
-
-public class dataBaseAdapter {
+// this class dosn't has any instance.
+public class dataBaseStartegy {
 	// default is logger.
 	private static InsuranceDao insuranceDB=Logger.getLogger();
 	private  static metaDataDao metaDataDB=Logger.getLogger();
 	private  static Admin adminDB=Logger.getLogger();
-	private dataBaseAdapter() {
+	// this class has no instance use the class only.
+	private dataBaseStartegy() {
+		
 	}
+	// set the strategy into logger DATABASE with json.
 public static void setLoggerDB() {
 	setInsuranceDB(Logger.getLogger());
 	setMetaDataDB(Logger.getLogger());
@@ -28,6 +31,6 @@ public static Admin getAdminDB() {
 	return adminDB;
 }
 public static void setAdminDB(Admin adminDB) {
-	dataBaseAdapter.adminDB = adminDB;
+	dataBaseStartegy.adminDB = adminDB;
 }
 }

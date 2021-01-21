@@ -6,12 +6,12 @@ public void updateVersion(String ver);
 public void deleteInsurance(int index);
 public void deleteAllInsurances();
 public static InsuranceDao insuranceNotAdminMethods() {
-	return dataBaseAdapter.getInsuranceDB();
+	return dataBaseStartegy.getInsuranceDB();
 }
 public static metaDataDao metaDataNotAdminMethods() {
-	return dataBaseAdapter.getMetaDataDB();
+	return dataBaseStartegy.getMetaDataDB();
 }
 public static Admin getAdmin() {
-	return dataBaseAdapter.getAdminDB();
+	return dataBaseStartegy.getAdminDB();
 }
 }

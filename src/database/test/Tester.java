@@ -5,7 +5,7 @@ import java.util.Date;
 
 import database.Admin;
 import database.InsuranceDao;
-import database.dataBaseAdapter;
+import database.dataBaseStartegy;
 import database.metaDataDao;
 import entity.CreateInsuraceFacade;
 import entity.InsuranceData;
@@ -26,7 +26,7 @@ private static void printInsurance(ArrayList <InsuranceData> insurances) {
 }
 public static void adminTest() {
 	System.out.println("Admin testing....");
-	dataBaseAdapter.setLoggerDB();
+	dataBaseStartegy.setLoggerDB();
 	Admin admin=Admin.getAdmin();
 	admin.deleteInsurance(1);
 	admin.updateVersion("AdminTest");
@@ -38,7 +38,7 @@ public static void adminTest() {
 	
 }
 public static void main(String[] args) {
-	dataBaseAdapter.setLoggerDB();
+	dataBaseStartegy.setLoggerDB();
 	InsuranceDao insuranceData = InsuranceDao.getInsuranceDataBase();
 	metaDataDao metaData = metaDataDao.getMetaDataBase();
 	Date d =new Date();
