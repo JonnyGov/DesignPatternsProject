@@ -22,6 +22,7 @@ import com.google.gson.reflect.TypeToken;
 
 import entity.CreateInsuraceFacade;
 import entity.InsuranceData;
+import entity.metaData;
 import entity.InsuranceData.InsuranceType;
 
 final class Logger implements InsuranceDao, metaDataDao,Admin {

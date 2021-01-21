@@ -1,4 +1,4 @@
-package database;
+package entity;
 
 public class metaData {
     public String  version ;

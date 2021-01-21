@@ -5,8 +5,8 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 
-import database.metaData;
 import database.metaDataDao;
+import entity.metaData;
 import entity.InsuranceData.InsuranceType;
 import gui.controller.MainInsuranceController;
 import javafx.event.ActionEvent;

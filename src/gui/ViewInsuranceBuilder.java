@@ -6,9 +6,9 @@ import java.net.URL;
 import java.util.ArrayList;
 
 import database.InsuranceDao;
-import database.metaData;
 import database.metaDataDao;
 import entity.InsuranceData;
+import entity.metaData;
 import gui.controller.ViewInsuranceController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;

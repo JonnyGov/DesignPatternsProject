@@ -6,9 +6,9 @@ import java.net.URL;
 import java.util.ArrayList;
 
 import database.InsuranceDao;
-import database.metaData;
 import database.metaDataDao;
 import entity.InsuranceData;
+import entity.metaData;
 import entity.InsuranceData.InsuranceType;
 import gui.controller.NewFormController;
 import javafx.event.ActionEvent;
