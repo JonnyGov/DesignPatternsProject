@@ -1,0 +1,32 @@
+[
+	{
+		"type": "entity.CarInsurance",
+		"data": {
+			"name": "ofek",
+			"fnamilyName": "shachar",
+			"remarks": "my car insurance",
+			"date": "Jan 27, 2021 12:00:00 AM",
+			"type": "Car"
+		}
+	},
+	{
+		"type": "entity.CarInsurance",
+		"data": {
+			"name": "vlad",
+			"fnamilyName": "barkans",
+			"remarks": "my car insurance",
+			"date": "Jan 27, 2021 12:00:00 AM",
+			"type": "Car"
+		}
+	},
+	{
+		"type": "entity.ApartmentInsurance",
+		"data": {
+			"name": "yonathan",
+			"fnamilyName": "gov",
+			"remarks": "my apartment insurance",
+			"date": "Jan 27, 2021 12:00:00 AM",
+			"type": "Apartment"
+		}
+	}
+]

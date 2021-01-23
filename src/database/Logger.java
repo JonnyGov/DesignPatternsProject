@@ -29,8 +29,8 @@ final class Logger implements InsuranceDao, metaDataDao,Admin {
 	private final static Logger singelton = new Logger();
 	private ArrayList<InsuranceData> insurances;
 	private final static String dataBaseFolder= "database/";
-	private final static String metaDataPath = dataBaseFolder+"metaTest.json";
-	private final static String insurancesDataPath = dataBaseFolder+"insuranceTest.json";
+	private final static String metaDataPath = dataBaseFolder+"MetaDataDB.json";
+	private final static String insurancesDataPath = dataBaseFolder+"InsuranceDB.json";
 	private Gson gson;
 	private metaData meta;
 	private Type InsuranceDataListType;

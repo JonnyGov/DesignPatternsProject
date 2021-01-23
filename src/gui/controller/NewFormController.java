@@ -59,7 +59,7 @@ public class NewFormController {
 		Date udate = new Date(sdate.getTime());
 		InsuranceType type = InsuranceData.InsuranceType.valueOf(lblTitle.getText().split(" ")[1]);
 		CreateInsuraceFacade creator = new CreateInsuraceFacade();
-		InsuranceData insurance = creator.createInsurance(tfName.getText(),tfFamilyName.getText(),udate, tfCreditCard.getText(),type);
+		InsuranceData insurance = creator.createInsurance(tfName.getText(),tfFamilyName.getText(),udate, tfRemarks.getText(),type);
 		return insurance;
 	}
 

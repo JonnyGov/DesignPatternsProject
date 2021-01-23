@@ -41,7 +41,7 @@ public class ViewInsuranceController {
 	private TableColumn<InsuranceData, Date> DateColumn;
 
 	@FXML
-	private TableColumn<InsuranceData, InsuranceData> RemarksColumn;
+	private TableColumn<InsuranceData, String> RemarksColumn;
 
 	@FXML
 	private VBox VbxAuther;
